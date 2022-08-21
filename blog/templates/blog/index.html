@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+	<title>Main Page</title>
+</head>
+
+<body>
+	<h1 id="title">Steve's Fantastical Blog</h1>
+	<div class="navigation">
+		<ul>
+			<li><a href="{% url 'blog:blog_home' %}">Blog Home</a></li>
+			<li><a href="{% url 'blog:blog_archive' %}">Blog Archive</a></li>
+			<li><a href="{% url 'blog:about' %}">About</a></li>
+			<li><a href="{% url 'blog:plan' %}">Software Development Plan</a></li>
+			<li><a href="{% url 'blog:techtips+css' %}">Tech Tips with CSS</a></li>
+			<li><a href="{% url 'blog:techtips-css' %}">Tech Tips without CSS</a></li>
+		</ul>
+	</div>
+	
+	<h5> {{ now }} </h5> 
+	
+	<div class="article">
+		<h2>Cheeky Penguins...</h2>
+		<h3>By Steve Johnson, 05/53/98252</h3>
+			<p>Duis pretium at nisl non malesuada. Donec tincidunt arcu quis sem varius tempor. Aenean convallis nec lorem at convallis. Nullam vehicula faucibus sapien et elementum. Quisque dolor tortor, cursus et fringilla at, condimentum ut neque. Proin fermentum nisl neque, quis posuere lorem faucibus eget. Cras consequat non erat a porta. Nullam in felis quis mi aliquet ultrices. In rutrum tincidunt maximus. Etiam neque lorem, luctus vitae ligula eget, rhoncus posuere quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla aliquet metus magna, at dictum elit dapibus quis. Aliquam condimentum ac magna a pulvinar. Etiam at felis nec nisl condimentum luctus. Nulla ac imperdiet nisi.</p>
+			<img src="{% static 'blog/images/penguin.jfif' %}" alt="little penguin dude">
+			<ol>
+				<li>ornare elit mi sed nis</li>
+				<li>Nullam in felis quis mi aliquet ultrice</li>
+				<li>augue eu cursus aliquam</li>
+			</ol>
+			<p>Duis pretium at nisl non malesuada. Donec tincidunt arcu quis sem varius tempor. Aenean convallis nec lorem at convallis. Nullam vehicula faucibus sapien et elementum. Quisque dolor tortor, cursus et fringilla at, condimentum ut neque. Proin fermentum nisl neque, quis posuere lorem faucibus eget. Cras consequat non erat a porta. Nullam in felis quis mi aliquet ultrices. In rutrum tincidunt maximus. Etiam neque lorem, luctus vitae ligula eget, rhoncus posuere quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla aliquet metus magna, at dictum elit dapibus quis. Aliquam condimentum ac magna a pulvinar. Etiam at felis nec nisl condimentum luctus. Nulla ac imperdiet nisi.
+
+Aenean ac metus sit amet arcu aliquam bibendum. Praesent maximus lacinia orci. Duis euismod vulputate lorem quis accumsan. Nullam dui justo, vestibulum at ligula dictum, hendrerit lobortis sapien. Suspendisse hendrerit arcu augue, sed dictum diam eleifend non. Nam luctus purus quis lacus ullamcorper accumsan. Pellentesque dictum suscipit lectus sit amet maximus. Sed sit amet accumsan leo, eu rhoncus enim. Maecenas dictum sollicitudin pretium. Ut malesuada semper erat, vel vulputate nibh dictum et. Aenean convallis dui vel libero accumsan convallis. Aliquam non semper neque, et congue ligula. Nunc at dui sagittis, ornare metus vel, tincidunt enim. Vestibulum malesuada, augue eu cursus aliquam, quam odio ornare erat, at ornare elit mi sed nisl. Phasellus lobortis aliquam mi a ultricies. Nulla vulputate est ut sagittis euismod.</p>
+		
+	</div>
+	
+	<div class="article">
+		<h2>Adorable cheetahs...</h2>
+		<h3>By Steve Johnson, 18/53/98252</h3>
+			<p>Duis pretium at nisl non malesuada. Donec tincidunt arcu quis sem varius tempor. Aenean convallis nec lorem at convallis. Nullam vehicula faucibus sapien et elementum. Quisque dolor tortor, cursus et fringilla at, condimentum ut neque. Proin fermentum nisl neque, quis posuere lorem faucibus eget. Cras consequat non erat a porta. Nullam in felis quis mi aliquet ultrices. In rutrum tincidunt maximus. Etiam neque lorem, luctus vitae ligula eget, rhoncus posuere quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla aliquet metus magna, at dictum elit dapibus quis. Aliquam condimentum ac magna a pulvinar. Etiam at felis nec nisl condimentum luctus. Nulla ac imperdiet nisi.</p>
+			<img src="{% static 'blog/images/cheetah.jpg' %}" alt="baby cheetah">
+			<ol>
+				<li>ornare elit mi sed nis</li>
+				<li>Nullam in felis quis mi aliquet ultrice</li>
+				<li>augue eu cursus aliquam</li>
+			</ol>
+			<p>Duis pretium at nisl non malesuada. Donec tincidunt arcu quis sem varius tempor. Aenean convallis nec lorem at convallis. Nullam vehicula faucibus sapien et elementum. Quisque dolor tortor, cursus et fringilla at, condimentum ut neque. Proin fermentum nisl neque, quis posuere lorem faucibus eget. Cras consequat non erat a porta. Nullam in felis quis mi aliquet ultrices. In rutrum tincidunt maximus. Etiam neque lorem, luctus vitae ligula eget, rhoncus posuere quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla aliquet metus magna, at dictum elit dapibus quis. Aliquam condimentum ac magna a pulvinar. Etiam at felis nec nisl condimentum luctus. Nulla ac imperdiet nisi.
+
+Aenean ac metus sit amet arcu aliquam bibendum. Praesent maximus lacinia orci. Duis euismod vulputate lorem quis accumsan. Nullam dui justo, vestibulum at ligula dictum, hendrerit lobortis sapien. Suspendisse hendrerit arcu augue, sed dictum diam eleifend non. Nam luctus purus quis lacus ullamcorper accumsan. Pellentesque dictum suscipit lectus sit amet maximus. Sed sit amet accumsan leo, eu rhoncus enim. Maecenas dictum sollicitudin pretium. Ut malesuada semper erat, vel vulputate nibh dictum et. Aenean convallis dui vel libero accumsan convallis. Aliquam non semper neque, et congue ligula. Nunc at dui sagittis, ornare metus vel, tincidunt enim. Vestibulum malesuada, augue eu cursus aliquam, quam odio ornare erat, at ornare elit mi sed nisl. Phasellus lobortis aliquam mi a ultricies. Nulla vulputate est ut sagittis euismod.</p>
+		
+	</div>
+
+	<div class="article">
+		<h2>Mischievous Primate...</h2>
+		<h3>By Steve Johnson, 01/54/98252</h3>
+			<p>Duis pretium at nisl non malesuada. Donec tincidunt arcu quis sem varius tempor. Aenean convallis nec lorem at convallis. Nullam vehicula faucibus sapien et elementum. Quisque dolor tortor, cursus et fringilla at, condimentum ut neque. Proin fermentum nisl neque, quis posuere lorem faucibus eget. Cras consequat non erat a porta. Nullam in felis quis mi aliquet ultrices. In rutrum tincidunt maximus. Etiam neque lorem, luctus vitae ligula eget, rhoncus posuere quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla aliquet metus magna, at dictum elit dapibus quis. Aliquam condimentum ac magna a pulvinar. Etiam at felis nec nisl condimentum luctus. Nulla ac imperdiet nisi.</p>
+			<img src="{% static 'blog/images/monkey.jpg' %}" alt="curious baby monkey">
+			<ol>
+				<li>ornare elit mi sed nis</li>
+				<li>Nullam in felis quis mi aliquet ultrice</li>
+				<li>augue eu cursus aliquam</li>
+			</ol>
+			<p>Duis pretium at nisl non malesuada. Donec tincidunt arcu quis sem varius tempor. Aenean convallis nec lorem at convallis. Nullam vehicula faucibus sapien et elementum. Quisque dolor tortor, cursus et fringilla at, condimentum ut neque. Proin fermentum nisl neque, quis posuere lorem faucibus eget. Cras consequat non erat a porta. Nullam in felis quis mi aliquet ultrices. In rutrum tincidunt maximus. Etiam neque lorem, luctus vitae ligula eget, rhoncus posuere quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla aliquet metus magna, at dictum elit dapibus quis. Aliquam condimentum ac magna a pulvinar. Etiam at felis nec nisl condimentum luctus. Nulla ac imperdiet nisi.
+
+Aenean ac metus sit amet arcu aliquam bibendum. Praesent maximus lacinia orci. Duis euismod vulputate lorem quis accumsan. Nullam dui justo, vestibulum at ligula dictum, hendrerit lobortis sapien. Suspendisse hendrerit arcu augue, sed dictum diam eleifend non. Nam luctus purus quis lacus ullamcorper accumsan. Pellentesque dictum suscipit lectus sit amet maximus. Sed sit amet accumsan leo, eu rhoncus enim. Maecenas dictum sollicitudin pretium. Ut malesuada semper erat, vel vulputate nibh dictum et. Aenean convallis dui vel libero accumsan convallis. Aliquam non semper neque, et congue ligula. Nunc at dui sagittis, ornare metus vel, tincidunt enim. Vestibulum malesuada, augue eu cursus aliquam, quam odio ornare erat, at ornare elit mi sed nisl. Phasellus lobortis aliquam mi a ultricies. Nulla vulputate est ut sagittis euismod.</p>
+		
+	</div>
+
+</body>
+</html>

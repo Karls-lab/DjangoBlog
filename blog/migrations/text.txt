@@ -1,0 +1,24 @@
+Attribute selectors
+
+This group of selectors gives you different ways to select elements based on the presence of a certain attribute on an element:
+
+a[title] { }
+
+Or even make a selection based on the presence of an attribute with a particular value:
+a[href="https://example.com"] { }
+
+Pseudo-classes and pseudo-elements
+
+This group of selectors includes pseudo-classes, which style certain states of an element. 
+The :hover pseudo-class for example selects an element only when it is being hovered over by the mouse pointer:
+
+a:hover { }
+
+<p> <br> </br> </p>
+
+It also includes pseudo-elements, which select a certain part of an element rather than the element itself. For example, 
+::first-line always selects the first line of text inside an element (a <p> in the below case), 
+acting as if a <span> was wrapped around the first formatted line and then selected.
+
+//
+\n

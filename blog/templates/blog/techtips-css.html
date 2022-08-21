@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>TechTips+CSS</title>
+</head>
+<body style="background-color:#ffe59e;width:1000px;height:700px;margin-right:auto;margin-left:auto;">
+	<h1 style="	font-style: oblique;font-weight: bold;color:#FFD700;text-shadow: 1px 1px 1px black,2px 2px 1px #FFD700;">Tech Tips-CSS</h1>
+		<ul style="background-color: coral;font-family:sans-serif;list-style-type: square;">
+			<li><a href="{% url 'blog:blog_home' %}">Blog Home</a></li>
+			<li><a href="{% url 'blog:blog_archive' %}">Blog Archive</a></li>
+			<li><a href="{% url 'blog:about' %}">About</a></li>
+			<li><a href="{% url 'blog:plan' %}">Software Development Plan</a></li>
+			<li><a href="{% url 'blog:techtips+css' %}">Tech Tips with CSS</a></li>
+			<li><a href="{% url 'blog:techtips-css' %}">Tech Tips without CSS</a></li>
+		</ul>
+	
+		<ul>
+			<li><a href="https://validator.w3.org/nu/#file">W3C HTML Validation Service</a></li>
+			<li><a href="http://www.css-validator.org/#validate_by_upload">W3C CSS  Validation Service</a></li>
+		</ul>
+
+		<h5> {{ now }} </h5> 
+
+	<div style="background-color:#8cd4d1;margin-right: 8%;	margin-left: 8%;padding-left: 10px;padding-right:20px;padding-bottom: 10px;">
+		<h3>HTML Elements</h3>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html"><code style="font-size:18px">&lt;html&gt;</code></a>
+			<ul>
+				<li style="background-color:#57c1bc">Root of an HTML document</li>
+				<li>Defines html 5</li>
+				<li style="background-color:#57c1bc">Define the language of the document</li>
+			</ul>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head"><code style="font-size:18px">&lt;head&gt;</code></a>
+			<ul>
+				<li style="background-color:#57c1bc">The next tag after head</li>
+				<li>Defines meta-data</li>
+				<li style="background-color:#57c1bc">We define the title of the wepage in the head tag</li>
+			</ul>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements"><code style="font-size:18px">&lt;h1&gt;</code></a>
+			<ul>
+				<li style="background-color:#57c1bc">Defines a header</li>
+				<li>Makes the text bigger</li>
+				<li style="background-color:#57c1bc">h1 is the biggerest, followed by h2, h3, h4, h5 and h6</li>
+			</ul>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div"><code style="font-size:18px">&lt;div&gt;</code></a>
+			<ul>
+				<li style="background-color:#57c1bc">Generic flow container</li>
+				<li>Used to divide styling choices for CSS</li>
+				<li style="background-color:#57c1bc">Seperated by classes and accessed through the style sheet</li>
+			</ul>
+		</div>
+	
+	
+		<div style="background-color:#8cd48c;margin-right: 8%;	margin-left: 8%;padding-left: 10px;padding-right:20px;padding-bottom: 10px;">
+			<h3>HTML Character Entities</h3>
+			<code style="font-size:18px">&lt;</code>
+				<ul>
+					<li style="background-color:#57c157">less than character</li>
+					<li>represented as &amp;lt; in code</li>
+				</ul>
+			<code style="font-size:18px">&gt;</code>
+				<ul>
+					<li style="background-color:#57c157">greater than character</li>
+					<li>represented as &amp;gt; in code</li>
+				</ul>
+			<code style="font-size:18px">&amp;</code>
+				<ul>
+					<li style="background-color:#57c157">ampersand</li>
+					<li>represented as &amp;amp; in code</li>
+				</ul>
+		</div>
+	
+	
+		<div style="background-color:#d48cc2;margin-right: 8%;	margin-left: 8%;padding-left: 10px;padding-right:20px;padding-bottom: 10px;">
+			<h3>CSS Selectors</h3>
+			<code style="font-size:18px">.class</code>
+				<ul>
+					<li style="background-color:#c157a7">styles all elements with the "class" name</li>
+					<li>example: &lt;div class="main_boody"&gt;</li>
+				</ul>
+			<code style="font-size:18px">element</code>
+				<ul>
+					<li style="background-color:#c157a7">styles all elements of the element name</li>
+					<li>example: p</li>
+					<li style="background-color:#c157a7">selects all &lt;p&gt; elements and styles them</li>
+				</ul>
+			<code style="font-size:18px">element01 element2</code>
+				<ul>
+					<li style="background-color:#c157a7">styles all elements02 inside elements01</li>
+					<li>example: div h1</li>
+					<li style="background-color:#c157a7">selects all &lt;h1&gt; elements inside &lt;div&gt;</li>
+				</ul>
+			<code style="font-size:18px">#id</code>
+				<ul>
+					<li style="background-color:#c157a7">styles all elements inside a tag with the id</li>
+					<li>example: #styling_choice</li>
+					<li style="background-color:#c157a7">&lt;h1 id="styling_choice"&gt; ...  &lt;/h1&gt;</li>
+				</ul>
+		</div>
+		
+	
+		<div style="background-color:#8c8cd4;;margin-right: 8%;	margin-left: 8%;padding-left: 10px;padding-right:20px;padding-bottom: 10px;">
+			<h3>CSS Properties</h3>
+			<code style="font-size:18px">background-color</code>
+				<ul>
+					<li style="background-color:#5757c1">changes the background color of the element</li>
+					<li>example: blue, red, #d48c8c</li>
+				</ul>
+			<code style="font-size:18px">margin-right</code>
+				<ul>
+					<li style="background-color:#5757c1">changes the margin of the element</li>
+					<li>can also be margin-left, margin-bottom, margin-top</li>
+					<li style="background-color:#5757c1">example: 15px, 8%</li>
+				</ul>
+			<code style="font-size:18px">display</code>
+				<ul>
+					<li style="background-color:#5757c1">tells how an HTML element should be displayed</li>
+					<li>example: none, inline, block, inline-block</li>
+				</ul>
+		</div>
+	
+
+</body>
+</html>

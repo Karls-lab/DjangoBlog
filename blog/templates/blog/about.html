@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+	<link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+	<title>About Page</title>
+</head>
+<body>
+	<h1 id="title">Résumé</h1>
+	<div class="navigation">
+		<ul>
+			<li><a href="{% url 'blog:blog_home' %}">Blog Home</a></li>
+			<li><a href="{% url 'blog:blog_archive' %}">Blog Archive</a></li>
+			<li><a href="{% url 'blog:about' %}">About</a></li>
+			<li><a href="{% url 'blog:plan' %}">Software Development Plan</a></li>
+			<li><a href="{% url 'blog:techtips+css' %}">Tech Tips with CSS</a></li>
+			<li><a href="{% url 'blog:techtips-css' %}">Tech Tips without CSS</a></li>
+		</ul>
+	</div>
+	
+	<h5 class = "timestamp"> {{ now }} </h5> 
+	
+	<div class="article">
+		<h2>First Web Development Post! :)</h2>
+		<!-- <img src="{% static 'blog/images/steve_the_alien.png' %}" alt="A picture of steve the alien"> -->
+		<h3>It's currently 12:02 PM and I've had the urge to get my shit together.</h3>
+		<p>Anyways, I've realized how much my web dev professor has taught and given us! I'm currently running on my blog site version 1.0
+		Nothing has changed since I submitted it in 2021. Anyways, on this web dev journey I hope that this site will be spruced up and look
+		amaaaazing! Today I'm working on a CSS MDN CSS  
+		<a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance">tutorial </a> 
+		</p>
+		<p> Okay, so I've just updated the website! I set the body to max-width to 650px, this compresses the webpage down. I think a certain max width
+		can be helpful, but to also make sure to scale the text with font-size: 1.2em. The measurement scales with how big the text will actually appear on
+		all types of devices. You can read more about it  <a href="https://www.w3.org/Style/Examples/007/units.en.html">here. </a>
+		</p>
+		<p> Onto the tutorial! Today, this page is aobut Cascade and Inheritance.<p>
+		<p> <strong>Cascade:</strong> When two rules apply that have equal specificity, the one that comes last in the CSS is the one that will be used. <p>
+		<p> <strong>Specificity:</strong> The more specific attribute will be applied. A class selector is more specific than an element selector.</p>
+		<p> <strong>Inheritance:</strong> Some CSS property values set on parent elements are in herited by their child elements, and some aren't.
+		Properties like widths, margins, padding, and borders do not inherit. </p>
+	</div>
+	
+	<div class="article">
+		<h3>CSS selectors</h3>
+		<p> Selectors can be stacked! </p>
+		<code> h1, .special { <br> color: blue <br>} </code>
+		<p>In HTML, you can add the <code> &ltbr&gt </code> tag anywhere to insert a line break. <br>
+			Also, don't forget that & + lt equals &lt, while & + gt equals &gt <br>
+			There's different types of CSS selectors, the . is the class selector, the # is an ID, and h1 is a group selector. <br>
+		</p>
+		<h3> Dynamic Python Database for blog posts... </h3>
+		<p> Today, I've been working on creating a dynamic database so I don't have to constantly write everything in html lmao. </p>
+		<p> Here are the steps to reset the database: delete the db.sqlite3 file. The populate python file will recreate the database
+			for you. After, run <code>python manage.py makemigrations</code> followed by <code>python manage.py makemigrations</code>
+		</p>
+		<p> Okay, use this website:<a href="https://www.color-hex.com/">Hex Colors</a>for some good looking colors. 
+		</p>
+			
+		<!-- <img src="{% static 'blog/images/mushroom.jfif' %}" alt="A red mushroom"> -->
+	</div>
+		
+	<div class="article">
+		<h3>CSS Box Model</h3>
+		<p> Parts of a box </p>
+		<ul>
+			<li> <b>Content box:</b> Where the conent is stored, can be sized with width and height</li>
+			<li> <b>Padding box:</b> The white space around the content, can use padding to adjust</li>
+			<li> <b>Border box:</b> The border box wraps the content and any padding.</li>
+			<li> <b>Margin box:</b> The margin box is whitespace applied at the outermost level. Margin is divided up evenly by default,
+				but can be specified with margin-top, right, bottom, or left</li>
+		</ul>
+		<p>Any padding and border is added to the width and height on both sides. Margin is divied up between both sides. Use the
+		DevTools to view the box model. There's such a thing as margin collapsing. If you're not getting the space you were expecting,
+		it might be due to margin collapsing.</p>
+		<p><b>Border</b> Border can set border-top, right, bottom, left. There's also border-width, style, color. Theses can also be combined more with
+			border-(direction)-(width, style, or color).
+		<img src="{% static 'blog/images/css_box_model.png' %}">
+	</div>
+	
+	<div class="article">
+		<h3>Handling different text directions</h3>
+		<p> <code>writing-mode</code> is a css property that can change the direction of your text.
+			There are three options: </p>
+			<ul>
+				<li><code>horizontal-tb</code>: Top to bottom block flow direction. Sentences run horizontally. </li>
+				<li><code>vertical-rl</code>: Right to left block flow direction. Sentences run vertically </li>
+				<li><code>vertical-lr</code>: Left to right block flow direction. Sentences run vertically </li>
+		<p>
+		</p>
+	</div>
+
+</body>
+</html>
