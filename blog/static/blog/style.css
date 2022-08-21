@@ -1,16 +1,36 @@
 
 .navigation {
+	display: flex;
+	align-items: center;
+	position: relative;
 	background-color: #021f9c;
 	font-family:sans-serif;
-	border-radius: 3%;
-	padding: .1em;
-	
+}
+
+.navigation ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	flex: 1 1 0;
+}
+
+.navigation ul li {
+	list-style-type: none;
+	flex: 1;  /* Makes each item take up equal negative space */
+	text-align: center;
 }
 
 .navigation a {
+	display: block;
+	padding: 1rem 2rem;
+	text-decoration: none;
 	color: #a4f644;
 	text-shadow: 1px 1px 1px black,
         1px 1px 1px #FFD700;
+}
+
+.navigation li :hover {
+	background-color: red;
 }
 
 html {
@@ -27,10 +47,6 @@ body {
 	font-size: 1.2em;
 }
 
-body *{
-	margin-left: 1%;
-	margin-right: 1%;
-}
 
 #title{
 	font-style: oblique;
@@ -39,10 +55,6 @@ body *{
 	text-shadow: 1px 1px 1px black,
              2px 2px 1px #FFD700;
 	padding-left: 1%;
-}
-
-.navigation li {
-	list-style-type: square;
 }
 
 .timestamp {
@@ -70,9 +82,6 @@ body *{
 	margin-bottom: 1%;
 	border-radius: 1%;
 }
-
-
-
 
 code{
 	font-size: 18px;

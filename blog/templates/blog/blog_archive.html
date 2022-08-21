@@ -12,17 +12,15 @@
 	<h1 id="title">Archive</h1>
 	<div class="navigation">
 		<ul>
-			<li><a href="{% url 'blog:blog_home' %}">Blog Home</a></li>
-			<li><a href="{% url 'blog:blog_archive' %}">Blog Archive</a></li>
+			<li><a href="{% url 'blog:blog_home' %}">Home</a></li>
+			<li><a href="{% url 'blog:blog_archive' %}">Archive</a></li>
 			<li><a href="{% url 'blog:about' %}">About</a></li>
-			<li><a href="{% url 'blog:plan' %}">Software Development Plan</a></li>
-			<li><a href="{% url 'blog:techtips+css' %}">Tech Tips with CSS</a></li>
-			<li><a href="{% url 'blog:techtips-css' %}">Tech Tips without CSS</a></li>
+			<li><a href="{% url 'blog:plan' %}">SDP</a></li>
+			<li><a href="{% url 'blog:techtips+css' %}">CSS</a></li>
 		</ul>
 	</div>
 	
-	<h5> {{ now }} </h5> 
-	<h4> ARCHIVE </h4>
+	<h5 class = "timestamp"> {{ now }} </h5> 
 	
 	{% for entry in all_blog_posts %}
 		<div class="article">
