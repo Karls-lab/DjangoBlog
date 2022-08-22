@@ -1,14 +1,50 @@
 
+/* Global Styling -------------------*/
+html {
+	/* background: white url("images/background.gif"); */
+	margin-left: calc(100vw - 100%); /* Scrollbar space fix. Credit goes to Ayke van Laëthem */
+ }
+
+body {
+	display: flex;
+	justify-content: center;
+	background-color: #333333;
+	padding: 0;
+	margin: 40px auto;
+	font-size: 1.2em;
+}
+
+
+/* NavBar Styling ------------------- */
+#title {
+	font-weight: bold;
+	color: black;
+	text-shadow: 1px 1px 1px black,
+             2px 2px 1px #FFD700;
+}
+
+.navigationMenu {
+	display: flex;
+	flex-direction: column;
+	width: 20rem;
+	align-items: center;
+	background-color: #F7DE3A ;
+	border-radius: 10px;
+	margin: 10px;
+}
+
 .navigation {
 	display: flex;
 	align-items: center;
 	position: relative;
-	background-color: #021f9c;
-	font-family:sans-serif;
+	background-color: #315399;
+	font-family: sans-serif;
+	width: 100%;
 }
 
 .navigation ul {
 	display: flex;
+	flex-direction: column;
 	margin: 0;
 	padding: 0;
 	flex: 1 1 0;
@@ -24,46 +60,39 @@
 	display: block;
 	padding: 1rem 2rem;
 	text-decoration: none;
-	color: #a4f644;
+	color: white;
 	text-shadow: 1px 1px 1px black,
-        1px 1px 1px #FFD700;
+        1px 1px 1px black;
 }
 
 .navigation li :hover {
-	background-color: red;
-}
-
-html {
-	/* background: white url("images/background.gif"); */
-	margin-right:auto;
-	margin-left:auto;
- }
-
-body {
-	background-color: #333333;
-	max-width: 1000px;
-	padding: 0;
-	margin: 40px auto;
-	font-size: 1.2em;
-}
-
-
-#title{
-	font-style: oblique;
-	font-weight: bold;
-	color: #FFD700;
-	text-shadow: 1px 1px 1px black,
-             2px 2px 1px #FFD700;
-	padding-left: 1%;
+	background-color: #1289b8;
 }
 
 .timestamp {
 	width: fit-content;
 	background-color: #414767;
-	color: #a4f644;
+	color: white;
 	border-radius: 10%;
 	padding: 1em;
 	border: 0.5em solid black;
+}
+
+
+/* Article Styling ------------------- */
+.articlesContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.article {
+	justify-content: center;
+	width: 50rem;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 1%;
+	font-size: 1.3rem;
 }
 
 .article img {
@@ -74,17 +103,16 @@ body {
 	margin-right: auto;
 }
 
-.article{
-	padding-left: 1%;
-	padding-bottom: 1%;
-	padding-top: 1%;
-	padding-right: 2%;
-	margin-bottom: 1%;
-	border-radius: 1%;
+code {
+	font-size: 18px;
 }
 
-code{
-	font-size: 18px;
+
+
+/* Forum Styling ------------------- */
+.forum {
+	background-color: #BFC1C2;
+	padding: 10px 20px;
 }
 
 
@@ -106,7 +134,7 @@ body .article:nth-child(4n) ul li:nth-child(odd) {
 
 /* green coloring */
 body .article:nth-child(4n + 1) {
-	background-color: #8cd48c;
+	background-color: #50C878;
 }
 body .article:nth-child(4n + 1) ul li:nth-child(odd) {
 	background-color: #57c157;

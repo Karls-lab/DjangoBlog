@@ -1,0 +1,41 @@
+Django Notes
+Views (views.py)
+A view is a python function which takes an http request and uses the render() function to returns the data.
+With this render function, I can pass arguments that pass dynamic data to my website.
+		
+Controller (urls.py)
+The controller is the url patterns in the website. This controlls what links I can access in my website.
+Url's are contained in a python list with each one stored in a path. Path takes 3 arguments, the 
+pattern path, a function to server data, and an id name for the url.
+		
+Templates
+Templates can be thought of the web urls that the user will potentially visit. 
+They contain html and Django's coding bracket language. We can insert
+custom python code and get custom dynamic data from the views file. The render() takes the 
+template and displays the website.
+Here, are some Django's code style:
+Variable , must be a direct mapping from a variable, keep the names the same! 
+Here's an example in views to map a variable: 'now': now
+Tags  can be if/else blocks and for loops. 
+Reference this: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#ref-templates-builtins-tags
+textVariable | Filters  this can filter text, create a max text size display field.
+Reference this: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#ref-templates-builtins-filters
+With this new code, I can create a few templates and copy them to create many unique webpages with Django
+		
+The DataBase
+I'm not directly interacting with the Database, but using models and Django functions to create tables
+and then fill thoes tables with customized dynamic data.
+Here's the model field reference: https://docs.djangoproject.com/en/3.2/ref/models/fields/#model-field-types
+I'll need to understand how to create row objects: save, retrieve them, and delete them.
+Override the ToString to give each row better representation. Perform simple queries and perform complex
+queries that work across two related tables.
+
+How do I reset the DataBase for Django?
+
+1. Delete the database
+2. python3 manage.py makemigrations
+3. python3 manage.py migrate
+		
+Miscellaneous
+I need to create a bunch of blog posts that will hold links in blog home. 
+When I click on that link it will bring me to a persistant template of a specific blog.

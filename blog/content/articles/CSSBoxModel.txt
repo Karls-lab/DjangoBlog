@@ -1,0 +1,14 @@
+CSS selectors
+
+Selectors can be stacked!
+<code> h1, .special { <br> color: blue <br>} </code>
+In HTML, you can add the <code> &ltbr&gt </code> tag anywhere to insert a line break. <br>
+Also, don't forget that & + lt equals &lt, while & + gt equals &gt
+There's different types of CSS selectors, the . is the class selector, the # is an ID, and h1 is a group selector. <br>
+Dynamic Python Database for blog posts...
+Today, I've been working on creating a dynamic database so I don't have to constantly write everything in html lmao.
+Here are the steps to reset the database: delete the db.sqlite3 file. The populate python file will recreate the database
+for you. After, run <code>python manage.py makemigrations</code> followed by <code>python manage.py makemigrations</code>
+Okay, use this website:<a href="https://www.color-hex.com/">Hex Colors</a>for some good looking colors.
+			
+<!-- <img src="{% static 'blog/images/mushroom.jfif' %}" alt="A red mushroom"> -->

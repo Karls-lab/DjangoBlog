@@ -6,30 +6,33 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
 	<link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
-	<title>Blog Archive</title>
+	<title>Archive</title>
 </head>
 <body>
-	<h1 id="title">Archive</h1>
-	<div class="navigation">
-		<ul>
-			<li><a href="{% url 'blog:blog_home' %}">Home</a></li>
-			<li><a href="{% url 'blog:blog_archive' %}">Archive</a></li>
-			<li><a href="{% url 'blog:about' %}">About</a></li>
-			<li><a href="{% url 'blog:plan' %}">SDP</a></li>
-			<li><a href="{% url 'blog:techtips+css' %}">CSS</a></li>
-		</ul>
+	<div class="navigationMenu">
+		<h1 id="title">Archive</h1>
+		<div class="navigation">
+			<ul>
+				<li><a href="{% url 'blog:blog_home' %}">Home</a></li>
+				<li><a href="{% url 'blog:blog_archive' %}">Archive</a></li>
+				<li><a href="{% url 'blog:about' %}">About</a></li>
+				<li><a href="{% url 'blog:plan' %}">Plan</a></li>
+				<li><a href="{% url 'blog:techtips+css' %}">CSS</a></li>
+			</ul>
+		</div>
+		<h5 class = "timestamp"> {{ now }} </h5> 
 	</div>
 	
-	<h5 class = "timestamp"> {{ now }} </h5> 
-	
+	<div class = "articlesContainer">
 	{% for entry in all_blog_posts %}
-		<div class="article">
-		<h2><a href="{% url 'blog:blog_entry' entry.id %}">{{ entry.title }}</a></h2>
-		<h4>Written by: {{ entry.author }} at {{ entry.pub_date }}</h4>
-		<h4>Number of comments: {{ entry.number_of_comments }} </h4>
-		<p>{{ entry.content | truncatewords:100 }} </p>
+			<div class="article">
+			<h2><a href="{% url 'blog:blog_entry' entry.id %}">{{ entry.title }}</a></h2>
+			<h4>Written by: {{ entry.author }} at {{ entry.pub_date }}</h4>
+			<h4>Number of comments: {{ entry.number_of_comments }} </h4>
+			<p>{{ entry.content | truncatewords:100 }} </p>
 		</div>
-	{% endfor %}
+		{% endfor %}
+	</div>
 
 	
 

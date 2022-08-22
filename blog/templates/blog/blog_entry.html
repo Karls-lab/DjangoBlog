@@ -8,60 +8,62 @@
 	<link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
 	<title>Plan Page</title>
 </head>
-<body>
-	<h1 id="title">{{blog_entry.title}}</h1>
-	<div class="navigation">
-		<ul>
-			<li><a href="{% url 'blog:blog_home' %}">Home</a></li>
-			<li><a href="{% url 'blog:blog_archive' %}">Archive</a></li>
-			<li><a href="{% url 'blog:about' %}">About</a></li>
-			<li><a href="{% url 'blog:plan' %}">SDP</a></li>
-			<li><a href="{% url 'blog:techtips+css' %}">CSS</a></li>
-		</ul>
+<body> 
+	<div class="navigationMenu">
+		<h1 id="title">{{blog_entry.title}}</h1>
+		<div class="navigation">
+			<ul>
+				<li><a href="{% url 'blog:blog_home' %}">Home</a></li>
+				<li><a href="{% url 'blog:blog_archive' %}">Archive</a></li>
+				<li><a href="{% url 'blog:about' %}">About</a></li>
+				<li><a href="{% url 'blog:plan' %}">Plan</a></li>
+				<li><a href="{% url 'blog:techtips+css' %}">CSS</a></li>
+			</ul>
+		</div>
+		<h5 class = "timestamp"> {{ now }} </h5> 
 	</div>
 	
-	<h5 class = "timestamp"> {{ now }} </h5> 
-	
-	<div class="article">
-		<p>{{blog_entry.content}}</p>
-	</div>
-	
-	<h3>Enter Your Comment Here</h3>
-	<form action="" method="POST">
-	{% csrf_token %}
-		<div>
-			<label for="name">Your Name</label>
-			<input id="name" name="commenter-name" type="text" placeholder="Enter your name" />
+	<div class = "articlesContainer">
+		<div class="article">
+			<p>{{blog_entry.content}}</p>
 		</div>
-		<div>
-			<label for="emailaddress">Your email address</label>
-			<input id="emailaddress" name="commenter-email" type="email" placeholder="Enter your email" />
-		</div>
-		<div>
-			<textarea cols="50" rows="10" id="content" name='commenter-text',
-			placeholder="Type your thoughts here"></textarea>
-		</div>
-		<div>
-			<label for="post">Save Comment</label>
-			<button id="post" type="submit">Post</button>
-		</div>
-	</form>
-	
-	
-	<div class='all_comments'>
-		<h3>Comments ({{ number_of_comments }})</h3>
-		{% for comment in blog_entry.comment_set.all %}
-			<div class='article'>
-				<h4>{{ comment.name }} ({{comment.email}})</h4>
-				<p>posted at {{comment.pub_date}} </p>
-				<p>{{ comment.content | truncatewords:50 }}</p>
+		
+		
+		<form action="" method="POST" class="forum">
+			<h3>Enter Your Comment Here</h3>
+		{% csrf_token %}
+			<div>
+				<label for="name">Your Name</label>
+				<input id="name" name="commenter-name" type="text" placeholder="Enter your name" />
 			</div>
-		{% endfor %}
+			<div>
+				<label for="emailaddress">Your email address</label>
+				<input id="emailaddress" name="commenter-email" type="email" placeholder="Enter your email" />
+			</div>
+			<div>
+				<textarea cols="50" rows="10" id="content" name='commenter-text',
+				placeholder="Type your thoughts here"></textarea>
+			</div>
+			<div>
+				<label for="post">Save Comment</label>
+				<button id="post" type="submit">Post</button>
+			</div>
+		</form>
+		
+		
+		<div class='all_comments'>
+			<h3>Comments ({{ number_of_comments }})</h3>
+			{% for comment in blog_entry.comment_set.all %}
+				<div class='article'>
+					<h4>{{ comment.name }} ({{comment.email}})</h4>
+					<p>posted at {{comment.pub_date}} </p>
+					<p>{{ comment.content | truncatewords:50 }}</p>
+				</div>
+			{% endfor %}
+		</div>
 	</div>
 	
 
 	
-	
-
 </body>
 </html>

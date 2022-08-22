@@ -6,142 +6,35 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
 	<link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
-	<title>Plan Page</title>
+	<title>Plan</title>
 </head>
 <body>
-	<h1 id="title">Plan</h1>
-	<div class="navigation">
-		<ul>
-			<li><a href="{% url 'blog:blog_home' %}">Home</a></li>
-			<li><a href="{% url 'blog:blog_archive' %}">Archive</a></li>
-			<li><a href="{% url 'blog:about' %}">About</a></li>
-			<li><a href="{% url 'blog:plan' %}">SDP</a></li>
-			<li><a href="{% url 'blog:techtips+css' %}">CSS</a></li>
-		</ul>
-	</div>
-	
-	<h5 class = "timestamp"> {{ now }} </h5> 
-	
-	<div class="article">
-		<h3>Phase 0: Requirements Specification</h3>
-		<p>Yesterday, on 10/4/2021, I finished the Django tutorial. There's a lot to unpack from the tutorial, I will be referencing the tutorial many more times.</p>
-		<h5>Known Knows</h5>
-		<p>I will first start on the tutorial to expand my known knowns. There's a lot of new Django code I need to learn. </p>
-		
-		<h5>known Unknowns</h5>
-		<p>I'm still iffy on html forms, so I will first create the template for that and continure to reference docs. 
-		I do not quite understand how the database works, I also don't know how to create the seperate blog posts and to archive them accordingly.</p>
-		
-		<h5>Unknown knows</h5>
-		<p>I will start with what I know and carefully carry on. I'll make sure to commit often so I don't make little website breaking mistakes.</p>
-		
-		<h5>Unknown Unknowns</h5>
-		<p>I'll keep the tutorial open, read up on the advice, and reference Erik's docs and tutorials he does in class.</p>
+	<div class="navigationMenu">
+		<h1 id="title">Plan</h1>
+		<div class="navigation">
+			<ul>
+				<li><a href="{% url 'blog:blog_home' %}">Home</a></li>
+				<li><a href="{% url 'blog:blog_archive' %}">Archive</a></li>
+				<li><a href="{% url 'blog:about' %}">About</a></li>
+				<li><a href="{% url 'blog:plan' %}">Plan</a></li>
+				<li><a href="{% url 'blog:techtips+css' %}">CSS</a></li>
+			</ul>
+		</div>
+		<h5 class = "timestamp"> {{ now }} </h5> 
 	</div>
 	
 	
-	<div class="article">
-		<h3>Phase 1: System Analysis</h3>
-		<h5>Views (views.py)</h5>
-		<p>A view is a python function which takes an http request and uses the render() function to returns the data.
-		With this render function, I can pass arguments that pass dynamic data to my website.</p>
-		
-		<h5>Controller (urls.py)</h5>
-		<p>The controller is the url patterns in the website. This controlls what links I can access in my website.
-		Url's are contained in a python list with each one stored in a path. Path takes 3 arguments, the 
-		pattern path, a function to server data, and an id name for the url.</p>
-		
-		<h5>Templates</h5>
-		<p>Templates can be thought of the web urls that the user will potentially visit. 
-		They contain html and Django's coding bracket language. We can insert
-		custom python code and get custom dynamic data from the views file. The render() takes the 
-		template and displays the website. </p>
-		<h5> Here, are some Django's code style:</h5>
-		<p> Variable , must be a direct mapping from a variable, keep the names the same!.
-			Here's an example in views to map a variable: 'now': now</p>
-		<p> Tags  can be if/else blocks and for loops. 
-		Reference this: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#ref-templates-builtins-tags</p>
-		<p> textVariable | Filters  this can filter text, create a max text size display field.
-		Reference this: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#ref-templates-builtins-filters</p>
-		<p>With this new code, I can create a few templates and copy them to create many unique webpages with Django</p>
-		
-		<h5>The DataBase</h5>
-		<p>I'm not directly interacting with the Database, but using models and Django functions to create tables
-		and then fill thoes tables with customized dynamic data. </p>
-		<p>Here's the model field reference: https://docs.djangoproject.com/en/3.2/ref/models/fields/#model-field-types</p>
-		<p>I'll need to understand how to create row objects: save, retrieve them, and delete them.
-		Override the ToString to give each row better representation. Perform simple queries and perform complex
-		queries that work across two related tables. </p>
-		
-		<h5>Miscellaneous</h5>
-		<p>I need to create a bunch of blog posts that will hold links in blog home. 
-		When I click on that link it will bring me to a persistant template of a specific blog.</p>
-		<p></p>
-	</div>
-	
-	
-	<div class="article">
-		<h3>Phase 2: Design</h3>
-		<h5>Early Design</h5>
-		<p>This assignment is overwhelming, it's hard to know where to start exactly, but I think I have a good idea
-		of where that starting point is. I'm going to create a simple link in my dynamic page blog home to a
-		dynamically created blog article. I'm pretty sure I'll need to link the database? maybe not.</p>
-		<p>The biggest hurdle so far would be the website interacting with the database. A lot goes into the relationship.
-		First, I have to create the models. The models are the key to what my database contains and what kind
-		of data I can expect to recieve from it. </p>
-		<p>The views is where a lot of the functionality for my dynamic content goes. The view functions will grab data
-		from the database and grab the html files and give it to the website so the user can see the pages.</p>
-		
-		
-	</div>
-	
-	
-	<div class="article">
-		<h3>Phase 3: Implementation</h3>
-		<p>Today, after much trial and error, I created a server that serves my website so it
-		looks the same as it would opening my files locally. However, there is still much more
-		improvements to be made. Okay, so now I have figured out how to serve my old static files with
-		Django templates. Theses templates are super useful. They are a little tricky to implement before
-		because you have to modify many different files like views, and urls. However, this keeps the website
-		code so much cleaner for larger projects than the last clusterfuck.</p>
-		<p>For the most part of this assignment, I copied the main ideas form the Django tutorial.
-		Foriegn keys, and the many to one relationship was the hardest to implement and I spend lots of time
-		referencing the database tutorial.</p>
-		<p>Okay, so wow, I now know that I need to delete the initial database code and the sql file if I ever
-		want to change the models. I found this out the hard way with much trial and error.</p>
-	</div>
-	
-	
-	<div class="article">
-		<h3>Phase 4: Testing & Debugging</h3>
-		<p>Testing has been different compared to other past assignments. Now, most of my debugging come from
-		reading traceback errors from the cmd, or Django error messages when my website breaks. I had to be a lot
-		more careful on this assignment too because the debuggin tools I'm used to are not there. As with websites,
-		there can be many soft errors that can still be errors, but the website still runs and doesnt break.
-		Debugging has definitly been a paint.</p>
-		<p>The biggest problem with debugging has definitly been accessing the foriegn keys relationship with the
-		database. I had literaly no idea how to get this data. I found out that I need to delete the inital python
-		file in migrations. My python populate script now works pretty good and I'm proud of it.</p>
-	</div>
-	
-	<div class="article">
-		<h3>Phase 5: Deployment</h3>
-		<p>Okay, so today on 10/17/21, I have the website almost ready to go. I still can't figure out how to display
-		comment count on the main page, but if I spend too much time on it, I'll forget about it and submit it as it is.
-		Today before I submit it, I will reread the requirements and watch Eric's video to make sure I have everything 
-		down pat. I will also need to make sure I have the correct amount of git pushes.</p>
-	</div>
-	
-	
-	<div class="article">
-		<h3>Phase 6: Maintenance</h3>
-		<p>Wow, maintenance is hard. This program server can be improved greatly. There's a lot of repeating
-		information and inneficient ways my server behaves. </p>
-		<p>There's definitly lots of little things I could spend time cleaning up to make my code more readable.
-		For example some of my variable names are a little wonkey and I could add some comments to my code. </p>
-		<p>Next assignment, I need to spend more time reading the requirements and the tutorials before I start
-		writing any code</p>
-		
+	<div class = "articlesContainer">
+		<div class="article">
+			<h3>Rough Future Plan for this Django Blog site :)</h3>
+			<p>There's a ton of things that I want to do with this website. It looks pretty funky atm, so there's always the need to 
+			spruce it up to make it nice. That's one way to go about it. The other way is to actually make this usable. 
+			currently, this website is not used as intended.
+			</p>
+			<p>Okay, scratch that, for this study session, I'll just look at the code I've already written and refactor things that I see needs
+			to be done.
+			</p>
+		</div>
 	</div>
 	
 

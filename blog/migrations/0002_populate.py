@@ -4,6 +4,7 @@ from django.db import migrations
 from django.utils import timezone
 import django.apps
 from random import randrange
+import os
 
 # I could literaly create a python program that opens a text file with all my blog posts and turn
 # them into html code... Hmmmm. 
@@ -20,10 +21,16 @@ def get_lorem(n = 1):
 	for x in range(n - 1):
 		random_text += lorem[randrange(text_size):]
 	return random_text
+
+def get_articles():
+	cwd = os.getcwd()
+	allArticles = os.listdir(cwd + "/blog/content/articles")
+	return allArticles
 	
-def get_text():
+def get_text(article):
 	data = ""
-	f = open("D:/Web_Dev/mysite/blog/migrations/text.txt", mode='r', encoding='utf-8')
+	cwd = os.getcwd()
+	f = open(cwd + "/blog/content/articles/" + article, mode='r', encoding='utf-8')
 	for line in f:
 		data += line
 	f.close()
@@ -33,19 +40,19 @@ def get_text():
 
 
 def populate_db(apps, schema_editor):
-	print("LSDKFJLDSKFJLSDKFJLSDKFJLSDKFJDLSKF")
 	Blog = apps.get_model('blog', 'Blog')
 	now = timezone.now()
-	
+	allArticlesList = get_articles()
 
-	blog_posts = 10
-	for blog in range(blog_posts):
-		b = Blog(title="Blog Post "+str(blog), author='bot '+str(blog), 
-		#content=get_lorem(5),
-		content=get_text(),
-		pub_date=now)
+	for blog in allArticlesList:
+		b = Blog(
+			title=blog.partition(".")[0], 
+			author="Karl", 
+			content=get_text(blog),
+			pub_date=now
+		)
 		b.save()
-		for blog in range(randrange(10)):
+		for x in range(randrange(10)):
 			b.comment_set.create(name='bot '+str(randrange(1000)), 
 				email='notarealemailaddress'+str(randrange(1000))+"@masterhacker.com", 
 				content=get_lorem()[:randrange(500)],

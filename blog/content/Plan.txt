@@ -1,0 +1,5 @@
+Ideas:
+Add a forward and backwards button for easy navigation
+Everytime you encounter a newline, actually add a new line? or <p> tag?
+Add an about page
+Add borders to make things stand out a little more

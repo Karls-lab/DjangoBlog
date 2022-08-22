@@ -1,0 +1,3 @@
+When working with databases, we often end up in situations where we have to reset the whole database. The possible reasons could be the addition or removal of some database tables, changes in the database design, issues on logic and relationships, or the database got populated with too much useless data. Whatever the case may be, Django makes it really easy to deal with this problem.
+
+Moreover, Django provides us with few commands that can handle this for us. One of these commands can reset database in Django, and we’re here to demonstrate how you can use it.
